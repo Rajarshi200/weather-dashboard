@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #222;
+    background-image: url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=2000&q=80'); /* Default BG */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.card {
+    background: rgba(40, 40, 55, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Search Bar */
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+input {
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 15px 20px;
+    height: 50px;
+    border-radius: 25px;
+    flex: 1;
+    font-size: 16px;
+}
+
+input::placeholder { color: rgba(255, 255, 255, 0.6); }
+
+button {
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #222;
+    font-size: 18px;
+}
+
+button:hover { background: #fff; transform: scale(1.05); }
+
+/* History Chips */
+.history-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.history-chip {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.2s;
+}
+
+.history-chip:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* Weather Info */
+.weather { display: none; margin-top: 20px; }
+.weather-icon { width: 120px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)); }
+.temp { font-size: 60px; font-weight: 500; }
+.city { font-size: 30px; margin-bottom: 5px; }
+.desc { font-size: 14px; text-transform: capitalize; margin-bottom: 20px; opacity: 0.8; }
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.col { display: flex; align-items: center; gap: 10px; text-align: left; }
+.col i { font-size: 24px; }
+
+/* Map Styling */
+#map {
+    height: 200px;
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 20px;
+    z-index: 1; /* Keeps map below other overlays */
+}
+
+.error { display: none; color: #ff6b6b; margin-top: 10px; text-align: left; }
